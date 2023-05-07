@@ -1,6 +1,6 @@
 import { IsEmail, IsNotEmpty } from "class-validator";
 
-export class UserCreateDto {
+export class PosteCreateDto {
 
     @IsNotEmpty()
     search_profil: string;  

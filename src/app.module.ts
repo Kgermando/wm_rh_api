@@ -19,7 +19,7 @@ import { PreferenceModule } from './preference/preference.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'db',
+      host: 'localhost',
       port: 5432,
       username: 'postgres',
       password: 'kataku',

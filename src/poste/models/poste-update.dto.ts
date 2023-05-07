@@ -1,4 +1,4 @@
-export class UserUpdateDto {
+export class PosteUpdateDto {
 
     search_profil?: string; 
 

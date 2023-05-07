@@ -1,42 +1,45 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards } from '@nestjs/common'; 
 import { AuthGuard } from 'src/auth/auth.guard';
+import { PosteService } from './poste.service';
+import { PosteUpdateDto } from './models/poste-update.dto';
+import { PosteCreateDto } from './models/poste-create.dto';
 
 
 @UseGuards(AuthGuard)
 @Controller('postes')
 export class PosteController {
     constructor(
-        private apointementService: ApointementService
+        private posteService: PosteService
     ) {}
 
     @Get()
     async all(@Query('page') page = 1) {
-        return this.apointementService.paginate(page);
+        return this.posteService.paginate(page);
     }
 
     @Post()
     async create(
-        @Body() body: ApointementCreateDto
+        @Body() body: PosteCreateDto
     ) {
-        return this.apointementService.create(body);
+        return this.posteService.create(body);
     }
 
     @Get(':id')
     async get(@Param('id') id: number) {
-        return this.apointementService.findOne({id});
+        return this.posteService.findOne({id});
     }
 
     @Put(':id')
     async update(
         @Param('id') id: number,
-        @Body() body: ApointementUpdateDto
+        @Body() body: PosteUpdateDto
     ) {
-        await this.apointementService.update(id, body);
-        return this.apointementService.findOne({id});
+        await this.posteService.update(id, body);
+        return this.posteService.findOne({id});
     }
 
     @Delete(':id')
     async delete(@Param('id') id: number) {
-        return this.apointementService.delete(id);
+        return this.posteService.delete(id);
     }
 }
