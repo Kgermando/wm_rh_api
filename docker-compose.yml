@@ -1,18 +1,25 @@
 version: '3.9'
 
 services:
-  app:
-    build: 
-      context: .
+  api:
+    build:
       dockerfile: Dockerfile
+      context: .
+      # Only will build development stage from our dockerfile
       target: development
-    container_name: app
+    
+    # Run in Debug Mode: npm run start:debug --> Don't forget to start your vscode debugger!
+    # Run in dev Mode: npm run start:dev
+    command: npm run start:debug 
+
     ports:
       - "8000:3000"
     networks:
       - app-network
     volumes:
-      - .:/app
+      # - .:/app
+      - .:/rh/src/app
+      - ./rh/src/app/node_modules
     depends_on:
       - db
 
