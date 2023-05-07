@@ -4,13 +4,8 @@ services:
   api:
     build:
       dockerfile: Dockerfile
-      context: .
-      # Only will build development stage from our dockerfile
-      target: development
-    
-    # Run in Debug Mode: npm run start:debug --> Don't forget to start your vscode debugger!
-    # Run in dev Mode: npm run start:dev
-    command: npm run start:debug 
+      context: . 
+     
 
     ports:
       - "8000:3000"
