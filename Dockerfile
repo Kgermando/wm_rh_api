@@ -1,3 +1,14 @@
+# FROM node:16.14
+
+# WORKDIR /app
+# COPY package*.json .
+# RUN npm install
+
+# COPY . .
+
+# EXPOSE 80
+# CMD npm run start:dev
+
 ###################
 # BUILD FOR LOCAL DEVELOPMENT
 ###################
@@ -47,4 +58,4 @@ COPY --chown=node:node --from=build /usr/src/app/dist ./dist
 
 CMD [ "node", "dist/main.js" ]
 
-EXPOSE 8000
+EXPOSE 80 
