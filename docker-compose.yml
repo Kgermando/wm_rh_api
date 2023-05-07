@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: development
-    container_name: api
+    container_name: app
     ports:
       - "8000:3000"
     networks:
