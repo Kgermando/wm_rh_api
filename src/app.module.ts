@@ -4,7 +4,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { DepartementModule } from './departement/departement.module';
-import { UploadController } from './upload/upload.controller';
 import { UploadfileModule } from './uploadfile/uploadfile.module';
 import { FonctionModule } from './fonction/fonction.module'; 
 import { SiteLocationModule } from './site-location/site-location.module';
@@ -43,6 +42,5 @@ import { PreferenceModule } from './preference/preference.module';
     ServicePrefModule,
     PreferenceModule,
   ],
-  controllers: [UploadController],
 })
 export class AppModule {}
