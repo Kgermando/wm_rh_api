@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 
 COPY --chown=node:node package*.json ./
 
-RUN npm ci
+RUN sudo apt install npm && sudo npm i -g @nestjs/cli && npm ci 
 
 COPY --chown=node:node . .
 
