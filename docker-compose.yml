@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL: postgres://postgres:kataku@postgres:5432/postgres
+      - DATABASE_URL = postgres://postgres:kataku@postgres:5432/postgres
       - NODE_ENV: production
 
   db:
