@@ -15,7 +15,8 @@ services:
       - ./rh/src/app/node_modules
     depends_on:
       - db
-
+    environment:
+      - DATABASE_URL: postgres://postgres:kataku@postgres:5432/postgres
 
   db:
     restart: always
