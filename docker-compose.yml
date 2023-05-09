@@ -15,8 +15,7 @@ services:
       - ./rh/src/app/node_modules
     depends_on:
       - db
-    environment:
-      - name=value
+
 
   db:
     restart: always
