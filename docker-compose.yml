@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL = postgres://postgres:kataku@postgres:5432/postgres
+      - DATABASE_URL: postgres://postgres:kataku@postgres:5432/postgres
       - NODE_ENV: production
 
   db:
@@ -29,9 +29,7 @@ services:
       - ./init-database.sh:/docker-entrypoint-initdb.d/init-database.sh
 
     environment:
-      - POSTGRES_USER = postgres
-      - POSTGRES_PASSWRD = kataku
-      - POSTGRES_DB = postgres
+      - POSTGRES_PASSWORD=kataku
    
     ports:
       - 54320:5432
