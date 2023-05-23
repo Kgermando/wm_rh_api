@@ -12,15 +12,9 @@ services:
     volumes:
       - /app/node_modules
       - ./wm-rh-api/:/app
-      # - ./src/:app/src
-      # - .:/app
-      # - .:/rh/src/app
-      # - ./rh/src/app/node_modules
+      
     depends_on:
-      - db
-    # environment:
-    #   - DATABASE_URL: postgres://postgres:kataku@postgres:5432/postgres
-    #   - NODE_ENV: production
+      - db 
 
   db:
     restart: always
