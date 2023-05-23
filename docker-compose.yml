@@ -10,7 +10,9 @@ services:
     networks:
       - app-network
     volumes:
-      - ./src/:app/src
+      - /app/node_modules
+      - ./wm-rh-api/:/app
+      # - ./src/:app/src
       # - .:/app
       # - .:/rh/src/app
       # - ./rh/src/app/node_modules
