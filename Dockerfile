@@ -9,9 +9,9 @@ WORKDIR /usr/src/app
 COPY --chown=node:node package*.json ./
 
 # Changé la configuration pour le swap
-RUN sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
-RUN sudo /sbin/mkswap /var/swap.1
-RUN sudo /sbin/swapon /var/swap.1
+# RUN sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+# RUN sudo /sbin/mkswap /var/swap.1
+# RUN sudo /sbin/swapon /var/swap.1
 
 RUN npm ci 
 
