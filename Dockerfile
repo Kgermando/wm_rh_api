@@ -2,7 +2,7 @@ FROM node:18
 
 WORKDIR /app
 
-COPY wm-rh-api/package*.json ./
+COPY package*.json ./
 
 RUN npm install
 
