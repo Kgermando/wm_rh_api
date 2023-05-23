@@ -10,9 +10,10 @@ services:
     networks:
       - app-network
     volumes:
+      - ./src/:app/src
       # - .:/app
-      - .:/rh/src/app
-      - ./rh/src/app/node_modules
+      # - .:/rh/src/app
+      # - ./rh/src/app/node_modules
     depends_on:
       - db
     # environment:
