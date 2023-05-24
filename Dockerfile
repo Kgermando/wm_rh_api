@@ -15,4 +15,4 @@ RUN npm i && \
 
 WORKDIR /app
 
-CMD ["node", "dist/main.js"]
+CMD ["node", "main.js"]
