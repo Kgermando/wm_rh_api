@@ -38,8 +38,6 @@ import configuration from './config/configuration';
       }),
       inject: [ConfigService],
     }),
-
-    ConfigModule,
     UserModule,
     AuthModule,
     CommonModule,
