@@ -10,9 +10,8 @@ RUN npm i && \
     npm prune --production && \
     cp -r dist /app && \
     cp -r node_modules /app/node_modules && \
-    rm -rf /origin
+    rm -rf /origin 
 
 WORKDIR /app
 
-# CMD [ "node", "dist/main.js" ]
-CMD [ "npm", "run", "start:dev" ]
+CMD [ "npm", "run", "start:dev" ]&
