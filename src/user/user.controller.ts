@@ -8,8 +8,8 @@ import { UserUpdateDto } from './models/user-update.dto';
 import { AuthService } from 'src/auth/auth.service';
 import { Request, Response } from 'express'; 
 
-@UseInterceptors(ClassSerializerInterceptor)
-@UseGuards(AuthGuard)
+// @UseInterceptors(ClassSerializerInterceptor)
+// @UseGuards(AuthGuard)
 @Controller('users')
 export class UserController {
 

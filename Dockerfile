@@ -15,4 +15,4 @@ COPY package*.json ./
 
 WORKDIR /app
 
-CMD [ "npm", "run", "start:dev" ]
+CMD [ "npm", "run", "start:dev" ] 
