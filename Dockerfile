@@ -4,7 +4,7 @@ COPY . /origin
 
 WORKDIR /origin
 
-RUN npm i --omit=dev && \
+RUN npm i && \
     npm run build && \
     npm prune --production && \
     cp -r dist /app && \
