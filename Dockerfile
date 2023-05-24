@@ -1,13 +1,17 @@
-FROM node:18
+FROM node:dubnium-alpine
+
+COPY . /origin
+
+WORKDIR /origin
+
+
+RUN npm i && \
+    npm run build && \
+    npm prune --production && \
+    cp -r dist /app && \
+    cp -r node_modules /app/node_modules && \
+    rm -rf /origin
 
 WORKDIR /app
 
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
-RUN npm run build
-
-CMD [ "npm", "run", "start:dev" ]
+CMD [ "node", "main.js" ]
