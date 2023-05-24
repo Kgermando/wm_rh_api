@@ -1,18 +1,13 @@
-FROM node:18
-
-COPY . /origin
-
-WORKDIR /origin
-
-RUN npm i && \
-    npm run build && \
-    npm prune --production && \
-    cp -r dist /app && \
-    cp -r node_modules /app/node_modules && \
-    rm -rf /origin
+FROM node:18-alpine
+ 
+WORKDIR /usr/src/app 
 
 COPY package*.json ./
 
-WORKDIR /app
+RUN npm install
 
-CMD [ "npm", "run", "start:dev" ]
+COPY . .
+
+RUN npm run build
+
+CMD [ "node", "dist/main.js" ]
