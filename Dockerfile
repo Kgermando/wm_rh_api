@@ -11,7 +11,7 @@ RUN npm i && \
     cp -r node_modules /app/node_modules && \
     rm -rf /origin
 
-COPY package*.json /app/
+COPY package*.json ./
 
 WORKDIR /app
 
