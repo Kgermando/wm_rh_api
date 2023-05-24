@@ -14,4 +14,5 @@ RUN npm i && \
 
 WORKDIR /app
 
-CMD [ "node", "dist/main.js" ]
+# CMD [ "node", "dist/main.js" ]
+CMD [ "npm", "run", "start:dev" ]
