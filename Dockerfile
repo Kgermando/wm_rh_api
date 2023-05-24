@@ -11,8 +11,8 @@ RUN npm i && \
     cp -r node_modules /app/node_modules && \
     rm -rf /origin
 
-COPY package*.json ./
+# COPY package*.json ./
 
 WORKDIR /app
 
-CMD [ "npm", "run", "start:dev" ] 
+CMD ["node", "src/main.js"]
