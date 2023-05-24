@@ -10,9 +10,9 @@ services:
     networks:
       - app-network
     volumes:
-      # - /app/node_modules
       - ./wm-rh-api/:/app
-      - /wm-rh-api/node_modules
+      - /app/node_modules
+      
     depends_on:
       - db 
     env_file:
