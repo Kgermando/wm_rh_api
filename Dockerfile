@@ -6,6 +6,7 @@ WORKDIR /origin
 
 
 RUN npm i && \
+    npm run test && \
     npm run build && \
     npm prune --production && \
     cp -r dist /app && \
