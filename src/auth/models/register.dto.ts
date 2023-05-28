@@ -115,4 +115,7 @@ export class RegisterDto {
 
     @IsNotEmpty()
     statut_presence: boolean;
+
+    @IsNotEmpty()
+    syndicat: boolean;
 }

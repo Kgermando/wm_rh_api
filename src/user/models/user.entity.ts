@@ -123,4 +123,7 @@ export class User {
     @Column()
     statut_presence: boolean;
 
+    @Column()
+    syndicat: boolean;
+
 }

@@ -103,4 +103,6 @@ export class UserUpdateDto {
     update_created?: Date;
 
     statut_presence?: boolean;
+
+    syndicat?: boolean;
 }

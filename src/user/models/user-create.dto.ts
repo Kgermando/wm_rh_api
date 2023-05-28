@@ -96,7 +96,7 @@ export class UserCreateDto {
     @IsNotEmpty()
     statut_personnel: boolean;
 
-     @IsNotEmpty()
+    @IsNotEmpty()
     cv_url: string; 
 
     @IsNotEmpty()
@@ -111,4 +111,7 @@ export class UserCreateDto {
 
     @IsNotEmpty()
     statut_presence: boolean;
+
+    @IsNotEmpty()
+    syndicat: boolean;
 }
