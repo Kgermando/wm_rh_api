@@ -85,7 +85,7 @@ export class RegisterDto {
 
     @IsNotEmpty()
     compte_bancaire: string;
-
+    
     @IsNotEmpty()
     nom_banque: string;
 
@@ -95,8 +95,8 @@ export class RegisterDto {
     @IsNotEmpty()
     statut_personnel: boolean;
 
-     @IsNotEmpty()
-    cv_url: string; 
+    @IsNotEmpty()
+    cv_url: string;
 
     @IsNotEmpty()
     signature: string;  

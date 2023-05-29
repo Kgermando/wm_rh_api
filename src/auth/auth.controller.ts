@@ -59,10 +59,12 @@ export class AuthController {
             cv_url: body.cv_url,
             signature: body.signature,
             created: body.created,
-            update_created : body.update_created,
+            update_created: body.update_created,
             password: hashed,
             statut_presence: body.statut_presence,
-        });
+            syndicat: body.syndicat,
+        }
+        );
     }
 
     @Post('login')
@@ -71,7 +73,7 @@ export class AuthController {
         @Body('password') password: string,
         @Res({passthrough: true}) response: Response
     ) {
-        const user = await this.userService.findOne({matricule});
+        const user = await this.userService.findOne({where: {matricule}}); 
 
         if(!user) {
             throw new NotFoundException('Utilisateur non trouvé!');
@@ -97,7 +99,7 @@ export class AuthController {
     @Get('user')
     async user(@Req() request: Request) {
         const id = await this.authService.userId(request);
-        return this.userService.findOne({id});
+        return this.userService.findOne({where: {id}});
     }
 
     @UseGuards(AuthGuard)
