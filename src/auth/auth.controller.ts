@@ -95,14 +95,14 @@ export class AuthController {
     }
 
 
-    // @UseGuards(AuthGuard)
+    @UseGuards(AuthGuard)
     @Get('user')
     async user(@Req() request: Request) {
         const id = await this.authService.userId(request);
         return this.userService.findOne({where: {id}});
     }
 
-    // @UseGuards(AuthGuard)
+    @UseGuards(AuthGuard)
     @Post('logout')
     async logout(
         @Res() response: Response 
