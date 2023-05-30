@@ -95,7 +95,7 @@ export class AuthController {
     }
 
 
-    @UseGuards(AuthGuard)
+    // @UseGuards(AuthGuard)
     @Get('user')
     async user(@Req() request: Request) {
         const id = await this.authService.userId(request);
