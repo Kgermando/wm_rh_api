@@ -102,7 +102,7 @@ export class AuthController {
         return this.userService.findOne({where: {id}});
     }
 
-    @UseGuards(AuthGuard)
+    // @UseGuards(AuthGuard)
     @Post('logout')
     async logout(
         @Res() response: Response 
